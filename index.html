@@ -88,6 +88,7 @@ input:checked + .slider:before{transform:translateX(26px);}
 @media screen and (max-width:768px){ 
     .sidebar{display:none;} 
     #mobileMenuBtn{display:block;} 
+    #darkModeWrapper{display:none;} /* FLOATING BUTTON HIDE ON MOBILE */ 
     #darkModeWrapper{display:none !important;} /* HIDE FLOATING DARK MODE ON MOBILE */ 
     .main{padding:15px;} 
     .card{padding:15px;} 
@@ -237,10 +238,15 @@ async function generatePrompt(){
     const t = type.value, s = style.value, q = quality.value, d = desc.value.trim();
     if(!d){alert("Description likho bhai");return;}
     const translated = await translateToEnglish(d);
-    const basePrompt = `Generate a ${t.toLowerCase()} in ${s} style.
+
+    // Remove the word "Prompt" from type
+    const cleanType = t.replace(" Prompt",""); // <- fix applied here
+
+    const basePrompt = `Generate a ${cleanType} in ${s} style.
 Scene description: ${translated}
 Quality: ${q}`;
-    const result = enhancePrompt(basePrompt,t,s,q);
+    
+    const result = enhancePrompt(basePrompt, cleanType, s, q);
     output.innerText = result;
     outputBox.style.display="block";
     outputBox.scrollIntoView({behavior:"smooth"});
