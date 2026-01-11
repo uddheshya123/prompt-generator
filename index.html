@@ -15,15 +15,11 @@ body{
     font-family:Poppins,Arial,sans-serif;
     background:#f2f2f2;
     display:flex;
-    flex-direction:row;
-    height:100vh;
     transition: background 0.3s, color 0.3s;
     color:#000;
 }
-body.dark-mode{
-    background:#121212;
-    color:#e0e0e0;
-}
+body.dark-mode{background:#121212;color:#e0e0e0;}
+
 .sidebar{
     width:260px;
     background:#fff;
@@ -32,13 +28,11 @@ body.dark-mode{
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    position:relative;
     transition: background 0.3s;
 }
-body.dark-mode .sidebar{
-    background:#1e1e1e;
-}
-.sidebar h2{color:#dc3545; margin-bottom:10px;}
+body.dark-mode .sidebar{background:#1e1e1e;color:#e0e0e0;}
+
+.sidebar h2{color:#dc3545;margin-bottom:10px;}
 .sidebar button{
     width:100%;
     padding:10px;
@@ -63,23 +57,16 @@ body.dark-mode .sidebar{
     border-radius:8px;
     padding:10px;
     overflow-y:auto;
-    transition: background 0.3s, color 0.3s;
     max-height:300px;
+    transition: background 0.3s, color 0.3s;
 }
-body.dark-mode #history-container{
-    background:#2b2b2b;
-}
-#history-container h3{
-    margin:0 0 8px 0;
-    color:#dc3545;
-    font-size:16px;
-}
+body.dark-mode #history-container{background:#2b2b2b;color:#e0e0e0;}
+#history-container h3{margin:0 0 8px 0;color:#dc3545;font-size:16px;}
 #history-list li{
     margin-bottom:6px;
     padding:6px 10px;
     background:#fff;
     border-radius:6px;
-    font-family:Arial,sans-serif;
     font-size:14px;
     cursor:pointer;
     border:1px solid #e0e0e0;
@@ -88,30 +75,10 @@ body.dark-mode #history-container{
     text-overflow:ellipsis;
     transition: background 0.3s, color 0.3s;
 }
-body.dark-mode #history-list li{
-    background:#3a3a3a;
-    color:#e0e0e0;
-    border:1px solid #555;
-}
-#history-list li.expanded{
-    white-space:normal;
-    word-wrap:break-word;
-}
-.clear-history{
-    margin-top:10px;
-    background:#dc3545;
-    color:#fff;
-    font-weight:bold;
-    border:none;
-    border-radius:6px;
-    padding:8px;
-    cursor:pointer;
-    width:100%;
-}
-.export-history{
+body.dark-mode #history-list li{background:#3a3a3a;color:#e0e0e0;border:1px solid #555;}
+#history-list li.expanded{white-space:normal;word-wrap:break-word;}
+.clear-history,.export-history{
     margin-top:5px;
-    background:#28a745;
-    color:#fff;
     font-weight:bold;
     border:none;
     border-radius:6px;
@@ -119,105 +86,31 @@ body.dark-mode #history-list li{
     cursor:pointer;
     width:100%;
 }
-.main{
-    flex:1;
-    padding:25px;
-    overflow-y:auto;
-}
-.title{
-    text-align:center;
-    font-size:32px;
-    font-weight:600;
-    color:#dc3545;
-    margin-bottom:20px;
-}
-.title i{margin-right:10px}
-.card{
-    max-width:800px;
-    margin:auto;
-    background:#fff;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 20px rgba(0,0,0,.1);
-    transition: background 0.3s, color 0.3s;
-}
-body.dark-mode .card{
-    background:#1e1e1e;
-    color:#e0e0e0;
-}
-label{display:block;margin-top:15px;font-weight:500}
-select,textarea{
-    width:100%;
-    padding:12px;
-    margin-top:6px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-family:Arial,sans-serif;
-    font-size:16px;
-    transition: background 0.3s, color 0.3s;
-}
-body.dark-mode select, body.dark-mode textarea{
-    background:#2b2b2b;
-    color:#e0e0e0;
-    border:1px solid #555;
-}
+.clear-history{background:#dc3545;color:#fff;}
+.export-history{background:#28a745;color:#fff;}
+
+.main{flex:1;padding:25px;overflow-y:auto;}
+.title{text-align:center;font-size:32px;font-weight:600;color:#dc3545;margin-bottom:20px;}
+.title i{margin-right:10px;}
+.card{max-width:800px;margin:auto;background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1);transition: background 0.3s, color 0.3s;}
+body.dark-mode .card{background:#1e1e1e;color:#e0e0e0;}
+label{display:block;margin-top:15px;font-weight:500;}
+select,textarea{width:100%;padding:12px;margin-top:6px;border-radius:8px;border:1px solid #ccc;font-size:16px;}
+body.dark-mode select, body.dark-mode textarea{background:#2b2b2b;color:#e0e0e0;border:1px solid #555;}
 textarea{height:120px;}
-button.generate{
-    margin-top:20px;
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(135deg,#dc3545,#8b0000);
-    color:#fff;
-    font-size:16px;
-    cursor:pointer;
-}
-.output-box{
-    margin-top:25px;
-    background:#f8f9fa;
-    padding:15px;
-    border-radius:8px;
-    position:relative;
-    display:none;
-    transition: background 0.3s, color 0.3s;
-    max-height:300px;
-    overflow-y:auto;
-}
-body.dark-mode .output-box{
-    background:#2b2b2b;
-    color:#e0e0e0;
-}
-#output{
-    font-family:Arial,sans-serif;
-    font-size:16px;
-    white-space:pre-wrap;
-    word-wrap:break-word;
-}
-.copy-btn{
-    position:absolute;
-    top:10px;
-    right:10px;
-    border:none;
-    background:linear-gradient(135deg,#dc3545,#8b0000);
-    color:#fff;
-    padding:6px 12px;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
-}
-.copy-btn:hover{
-    opacity:0.9;
-}
-#copy-tick{
-    display:none;
-    color:limegreen;
-    font-weight:bold;
-    position:absolute;
-    top:10px;
-    right:110px;
-    font-size:18px;
-}
+button.generate{margin-top:20px;width:100%;padding:14px;border:none;border-radius:10px;background:linear-gradient(135deg,#dc3545,#8b0000);color:#fff;font-size:16px;cursor:pointer;}
+
+.output-box{margin-top:25px;background:#f8f9fa;padding:15px;border-radius:8px;position:relative;display:none;max-height:300px;overflow-y:auto;transition: background 0.3s,color 0.3s;}
+body.dark-mode .output-box{background:#2b2b2b;color:#e0e0e0;}
+#output{font-family:Arial,sans-serif;font-size:16px;white-space:pre-wrap;word-wrap:break-word;}
+.copy-btn{position:absolute;top:10px;right:10px;border:none;background:linear-gradient(135deg,#dc3545,#8b0000);color:#fff;padding:6px 12px;border-radius:6px;cursor:pointer;font-weight:bold;}
+#copy-tick{display:none;color:limegreen;font-weight:bold;position:absolute;top:10px;right:110px;font-size:18px;}
+
+/* Hamburger menu for mobile */
+#mobileMenuBtn{display:none;position:absolute;top:15px;right:15px;font-size:24px;color:#dc3545;cursor:pointer;}
+#mobileMenuContent{display:none;position:absolute;top:50px;right:10px;width:250px;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.2);padding:10px;z-index:1000;}
+body.dark-mode #mobileMenuContent{background:#1e1e1e;color:#e0e0e0;}
+#mobileMenuContent button, #mobileMenuContent input{width:100%;margin:5px 0;}
 
 /* Dark mode switch style */
 .switch {
@@ -246,42 +139,26 @@ body.dark-mode .output-box{
   transition:.4s;
   border-radius:50%;
 }
-input:checked + .slider{
-  background:#dc3545;
-}
-input:checked + .slider:before{
-  transform:translateX(26px);
-}
+input:checked + .slider{background:#dc3545;}
+input:checked + .slider:before{transform:translateX(26px);}
 
-/* Responsive for mobile */
+/* Responsive */
 @media screen and (max-width:768px){
-    body{flex-direction:column;}
-    .sidebar{width:100%; flex-direction:row; overflow-x:auto; padding:10px;}
-    .sidebar button, #history-search, .clear-history, .export-history{
-        flex:1;
-        margin:5px;
-        font-size:14px;
-        padding:8px;
-    }
-    #history-container{max-height:150px;}
+    .sidebar{display:none;} 
+    #mobileMenuBtn{display:block;} 
     .main{padding:15px;}
-    .title{font-size:28px;}
     .card{padding:15px;}
     .output-box{max-height:200px;}
 }
 </style>
 </head>
-
 <body>
 
+<!-- Left sidebar (Laptop) -->
 <div class="sidebar">
     <h2><i class="fas fa-bars"></i> Menu</h2>
     <button onclick="resetAll()">+ New</button>
-
-    <!-- Search in History -->
     <input type="text" id="history-search" placeholder="Search History..." oninput="filterHistory()">
-
-    <!-- History box -->
     <div id="history-container">
         <h3>History</h3>
         <ul id="history-list"></ul>
@@ -290,39 +167,38 @@ input:checked + .slider:before{
     <button class="export-history" onclick="exportHistory()">Export History</button>
 </div>
 
-<!-- Floating Dark Mode Toggle on right side -->
-<div id="darkModeWrapper" style="
-    position:fixed; 
-    top:20px; 
-    right:20px; 
-    display:flex; 
-    align-items:center; 
-    gap:6px; 
-    z-index:1000;
-    background:rgba(255,255,255,0.1); 
-    padding:5px 10px; 
-    border-radius:8px;
-    backdrop-filter:blur(5px);
-">
+<!-- Mobile 3-dot menu button -->
+<i id="mobileMenuBtn" class="fas fa-ellipsis-v" onclick="toggleMobileMenu()"></i>
+
+<!-- Mobile menu content -->
+<div id="mobileMenuContent">
+    <button onclick="resetAll()">+ New</button>
+    <input type="text" id="mobile-history-search" placeholder="Search History..." oninput="filterHistoryMobile()">
+    <div id="mobile-history-container" style="max-height:200px;overflow-y:auto;">
+        <h3>History</h3>
+        <ul id="mobile-history-list"></ul>
+    </div>
+    <button class="clear-history" onclick="clearHistoryMobile()">Clear History</button>
+    <button class="export-history" onclick="exportHistoryMobile()">Export History</button>
+</div>
+
+<!-- Floating Dark Mode toggle stays same -->
+<div id="darkModeWrapper" style="position:fixed;top:20px;right:20px;display:flex;align-items:center;gap:6px;z-index:1000;background:rgba(255,255,255,0.1);padding:5px 10px;border-radius:8px;backdrop-filter:blur(5px);">
   <label class="switch">
     <input type="checkbox" id="darkModeToggle">
     <span class="slider"></span>
   </label>
-  <small style="color:#dc3545; font-weight:bold;">Dark Mode</small>
+  <small style="color:#dc3545;font-weight:bold;">Dark Mode</small>
 </div>
 
 <div class="main">
-    <div class="title">
-        <i class="fas fa-wand-magic-sparkles"></i> Prompt Generator
-    </div>
-
+    <div class="title"><i class="fas fa-wand-magic-sparkles"></i> Prompt Generator</div>
     <div class="card">
         <label>Prompt Type</label>
         <select id="type">
             <option>Image Prompt</option>
             <option>Video Prompt</option>
         </select>
-
         <label>Style</label>
         <select id="style">
             <option>Anime</option>
@@ -336,19 +212,15 @@ input:checked + .slider:before{
             <option>Minimalist</option>
             <option>Surreal</option>
         </select>
-
         <label>Quality</label>
         <select id="quality">
             <option>2K</option>
             <option>4K</option>
             <option>8K</option>
         </select>
-
         <label>Describe Your Scene (Hinglish / Hindi)</label>
         <textarea id="desc" placeholder="ek ladka jungle me bhoot se dar raha hai"></textarea>
-
         <button class="generate" onclick="generatePrompt()">Generate Prompt</button>
-
         <div class="output-box" id="outputBox">
             <button class="copy-btn" onclick="copyText()">Copy</button>
             <span id="copy-tick">✔</span>
@@ -358,104 +230,106 @@ input:checked + .slider:before{
 </div>
 
 <script>
+// Mobile menu toggle
+function toggleMobileMenu(){
+    const menu = document.getElementById('mobileMenuContent');
+    menu.style.display = (menu.style.display==='block')?'none':'block';
+}
+
+// Dark Mode toggle
+const toggle = document.getElementById('darkModeToggle');
+toggle.addEventListener('change', ()=>{document.body.classList.toggle('dark-mode', toggle.checked);});
+
+// Translation + Prompt generation
 async function translateToEnglish(text){
     const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(text)}`;
     const res = await fetch(url);
     const data = await res.json();
     return data[0][0][0];
 }
-
-// Extra professional details added for prompts
-function enhancePrompt(basePrompt, type, style, quality){
+function enhancePrompt(basePrompt,type,style,quality){
     const extras = `
 Use ultra-realistic lighting, cinematic composition, attention to fine details, professional color grading.
 Ensure textures are sharp and visually appealing.
 Include natural depth, realistic shadows and reflections.
-Perfectly optimized for ${type.toLowerCase()} in ${style} style at ${quality} quality.
-Add subtle background details to enhance scene storytelling.`;
+Perfectly optimized for ${type.toLowerCase()} in ${style} style at ${quality} quality.`;
     return basePrompt + extras;
 }
 
+// Laptop + Mobile history sync
+function addToHistoryBoth(promptText){
+    addToHistory(promptText);
+    addToHistoryMobile(promptText);
+}
+
+// Generate Prompt
 async function generatePrompt(){
-    const t = type.value;
-    const s = style.value;
-    const q = quality.value;
-    const d = desc.value.trim();
-
+    const t = type.value, s = style.value, q = quality.value, d = desc.value.trim();
     if(!d){alert("Description likho bhai");return;}
-
     const translated = await translateToEnglish(d);
-
-    const basePrompt =
-`Generate a ${t.toLowerCase()} in ${s} style.
-Scene description: ${translated}
-Quality: ${q}`;
-
-    const result = enhancePrompt(basePrompt, t, s, q);
-
-    output.innerText = result;
+    const basePrompt=`Generate a ${t.toLowerCase()} in ${s} style.\nScene description: ${translated}\nQuality: ${q}`;
+    const result = enhancePrompt(basePrompt,t,s,q);
+    output.innerText=result;
     outputBox.style.display="block";
     outputBox.scrollIntoView({behavior:"smooth"});
-
-    addToHistory(result);
+    addToHistoryBoth(result);
 }
 
+// Copy button
 function copyText(){
-    navigator.clipboard.writeText(output.innerText).then(() => {
-        const tick = document.getElementById('copy-tick');
-        tick.style.display = 'inline';
-        setTimeout(() => { tick.style.display = 'none'; }, 1500);
+    navigator.clipboard.writeText(output.innerText).then(()=>{
+        const tick=document.getElementById('copy-tick');
+        tick.style.display='inline';
+        setTimeout(()=>{tick.style.display='none';},1500);
     });
 }
 
-function resetAll(){
-    desc.value="";
-    outputBox.style.display="none";
-}
+// Reset
+function resetAll(){desc.value="";outputBox.style.display="none";}
 
-// History functions
+// History functions (Laptop)
 function addToHistory(promptText){
-    const historyList = document.getElementById('history-list');
-    const li = document.createElement('li');
-    li.textContent = promptText;
-    li.addEventListener('click', () => {
-        li.classList.toggle('expanded');
-        output.innerText = promptText;
-        outputBox.style.display = "block";
-        outputBox.scrollIntoView({behavior:"smooth"});
-    });
-    historyList.prepend(li); // latest first
+    const historyList=document.getElementById('history-list');
+    const li=document.createElement('li');
+    li.textContent=promptText;
+    li.addEventListener('click',()=>{li.classList.toggle('expanded');output.innerText=promptText;outputBox.style.display="block";outputBox.scrollIntoView({behavior:"smooth"});});
+    historyList.prepend(li);
 }
-
-function clearHistory(){
-    document.getElementById('history-list').innerHTML = '';
-}
-
+function clearHistory(){document.getElementById('history-list').innerHTML='';}
 function exportHistory(){
-    const items = Array.from(document.querySelectorAll('#history-list li')).map(li=>li.textContent);
+    const items=Array.from(document.querySelectorAll('#history-list li')).map(li=>li.textContent);
     if(items.length===0){alert("History empty!"); return;}
-    const blob = new Blob([items.join("\n\n")], {type:"text/plain"});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = "prompt_history.txt";
-    a.click();
-    URL.revokeObjectURL(url);
+    const blob=new Blob([items.join("\n\n")],{type:"text/plain"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download="prompt_history.txt";a.click();URL.revokeObjectURL(url);
 }
-
 function filterHistory(){
-    const search = document.getElementById('history-search').value.toLowerCase();
-    document.querySelectorAll('#history-list li').forEach(li=>{
-        li.style.display = li.textContent.toLowerCase().includes(search) ? '' : 'none';
-    });
+    const search=document.getElementById('history-search').value.toLowerCase();
+    document.querySelectorAll('#history-list li').forEach(li=>{li.style.display=li.textContent.toLowerCase().includes(search)?'':'none';});
 }
 
-// Dark Mode toggle
-const toggle = document.getElementById('darkModeToggle');
-toggle.addEventListener('change', ()=>{
-    document.body.classList.toggle('dark-mode', toggle.checked);
-});
+// Mobile history functions (in 3-dot menu)
+function addToHistoryMobile(promptText){
+    const historyList=document.getElementById('mobile-history-list');
+    const li=document.createElement('li');
+    li.textContent=promptText;
+    li.addEventListener('click',()=>{li.classList.toggle('expanded');output.innerText=promptText;outputBox.style.display="block";outputBox.scrollIntoView({behavior:"smooth"});});
+    historyList.prepend(li);
+}
+function clearHistoryMobile(){document.getElementById('mobile-history-list').innerHTML='';}
+function exportHistoryMobile(){
+    const items=Array.from(document.querySelectorAll('#mobile-history-list li')).map(li=>li.textContent);
+    if(items.length===0){alert("History empty!"); return;}
+    const blob=new Blob([items.join("\n\n")],{type:"text/plain"});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download="prompt_history_mobile.txt";a.click();URL.revokeObjectURL(url);
+}
+function filterHistoryMobile(){
+    const search=document.getElementById('mobile-history-search').value.toLowerCase();
+    document.querySelectorAll('#mobile-history-list li').forEach(li=>{li.style.display=li.textContent.toLowerCase().includes(search)?'':'none';});
+}
 </script>
-
 </body>
 </html>
