@@ -15,6 +15,7 @@ body{
     font-family:Poppins,Arial,sans-serif;
     background:#f2f2f2;
     display:flex;
+    flex-direction:row;
     height:100vh;
     transition: background 0.3s, color 0.3s;
     color:#000;
@@ -63,6 +64,7 @@ body.dark-mode .sidebar{
     padding:10px;
     overflow-y:auto;
     transition: background 0.3s, color 0.3s;
+    max-height:300px;
 }
 body.dark-mode #history-container{
     background:#2b2b2b;
@@ -117,7 +119,11 @@ body.dark-mode #history-list li{
     cursor:pointer;
     width:100%;
 }
-.main{flex:1;padding:25px;overflow-y:auto;}
+.main{
+    flex:1;
+    padding:25px;
+    overflow-y:auto;
+}
 .title{
     text-align:center;
     font-size:32px;
@@ -175,6 +181,8 @@ button.generate{
     position:relative;
     display:none;
     transition: background 0.3s, color 0.3s;
+    max-height:300px;
+    overflow-y:auto;
 }
 body.dark-mode .output-box{
     background:#2b2b2b;
@@ -243,6 +251,23 @@ input:checked + .slider{
 }
 input:checked + .slider:before{
   transform:translateX(26px);
+}
+
+/* Responsive for mobile */
+@media screen and (max-width:768px){
+    body{flex-direction:column;}
+    .sidebar{width:100%; flex-direction:row; overflow-x:auto; padding:10px;}
+    .sidebar button, #history-search, .clear-history, .export-history{
+        flex:1;
+        margin:5px;
+        font-size:14px;
+        padding:8px;
+    }
+    #history-container{max-height:150px;}
+    .main{padding:15px;}
+    .title{font-size:28px;}
+    .card{padding:15px;}
+    .output-box{max-height:200px;}
 }
 </style>
 </head>
